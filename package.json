@@ -1,0 +1,21 @@
+{
+  "name": "ridezonebd.com",
+  "version": "1.0.0",
+  "description": "This is a website from where you can buy any can kind vehicle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nuruzzaman khan (mr.nuruzzamancse@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "7.3.0",
+    "mongoose": "^5.0.12",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.3"
+  }
+}
