@@ -7,20 +7,15 @@ var userLogin = (req, res, next) => {
         password = req.body.password;
     console.log(req.body);
 
-    User.find((err, data) => {
-        if (err) {
-
-        } else {
-            console.log(data);
-        }
-    });
-
     User.findOne({email: email}, (err, user) => {
         if(err) {
             console.log(err);
         }
         else if (!user) {
-            return
+            return res.status(201).json({
+                success: false,
+                message: 'User dont exist'
+            });
         } else {
             console.log(user);
             User.comparePassword(password, user.password, (err, match) => {
@@ -30,10 +25,10 @@ var userLogin = (req, res, next) => {
                     var token = jwt.sign(user, config.secret, {expiresIn: config.tokenexp});
                     return res.status(201).json({success: true, data: user, token: token });
                 } else {
-                    return res.statue(404).json({
+                    return res.status(201).json({
                         success: false,
                         message: 'password don\'t match'
-                    })
+                    });
                 }
             });
         }
