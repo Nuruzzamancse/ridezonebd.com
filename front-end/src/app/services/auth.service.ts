@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http, Headers} from '@angular/http';
 import { HttpClientModule} from "@angular/common/http";
 import 'rxjs/add/operator/map';
+import { tokenNotExpired } from 'angular2-jwt';
+
+
+
+
+
 
 @Injectable()
 export class AuthService {
@@ -12,7 +18,9 @@ export class AuthService {
   constructor(private http:Http) { }
 
   registerUser(user){
+
     let headers = new Headers();
+
     headers.append('Content-type','application/json');
 
     return this.http.post('http://localhost:3000/user',user,{headers: headers})
@@ -84,6 +92,11 @@ export class AuthService {
     this.authToken = null;
     this.user = null;
     localStorage.clear();
+  }
+
+  loggedIn(){
+
+    return tokenNotExpired('id_token');
   }
 
 }

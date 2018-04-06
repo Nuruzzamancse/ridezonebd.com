@@ -18,6 +18,7 @@ import { ValidateService} from "./services/validate.service";
 import { FlashMessagesService} from "angular2-flash-messages";
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthService} from "./services/auth.service";
+import { AuthGaurd} from "./gaurds/auth.gaurd";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AuthService} from "./services/auth.service";
   providers: [ValidateService,
     FlashMessagesService,
     AuthService,
+    AuthGaurd
 
 
   ],
