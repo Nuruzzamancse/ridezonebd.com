@@ -19,6 +19,8 @@ import { FlashMessagesService} from "angular2-flash-messages";
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthService} from "./services/auth.service";
 import { AuthGaurd} from "./gaurds/auth.gaurd";
+import { ProductComponent } from './components/product/product.component';
+import {ProductService} from "./services/product.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AuthGaurd} from "./gaurds/auth.gaurd";
     ProfileComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { AuthGaurd} from "./gaurds/auth.gaurd";
   providers: [ValidateService,
     FlashMessagesService,
     AuthService,
-    AuthGaurd
+    AuthGaurd,
+    ProductService
 
 
   ],

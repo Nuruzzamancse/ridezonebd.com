@@ -1,14 +1,17 @@
 var Product = require('../model/product');
 
 var createProduct = (req, res, next) => {
+
     console.log('this is create product');
 
     var name = req.body.name,
+        picture = req.body.picture,
         description = req.body.description,
         price = req.body.price;
 
     var myProduct = new Product({
         name: name,
+        picture: picture,
         description: description,
         price: price
     });
@@ -65,6 +68,7 @@ var getAllProduct = (req, res, next) => {
 
 var updateProduct = (req, res, next) => {
     var name = req.body.name,
+        picture = req.body.picture,
         description = req.body.description,
         price = req.body.price;
 
@@ -77,6 +81,7 @@ var updateProduct = (req, res, next) => {
         }
         else {
             product.name = name || product.name;
+            product.picture = picture || product.picture;
             product.description = description || product.description;
             product.price = price || product.price;
 
