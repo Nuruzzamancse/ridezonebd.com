@@ -50,13 +50,19 @@ var userAuthenticate = (req, res, next) => {
 }
 
 var adminAuthenticate = (req, res, next) => {
+
     console.log('admin authenticate');
     var token = req.body.token || req.headers['authorization'];
+
+    console.log('Here bal '+token);
+
+
     if(token) {
+
         // console.log(token);
         jwt.verify(token, config.secret, (err, decoded) => {
             if(err) {
-                return res.status(301).json({
+                return res.status(201).json({
                     success: false,
                     message: err
                 });
@@ -67,7 +73,7 @@ var adminAuthenticate = (req, res, next) => {
                     req.decoded = decoded;
                     next();
                 } else {
-                    return res.status(301).json({
+                    return res.status(201).json({
                         success: false,
                         message: 'Invalid Admin Id'
                     });
@@ -75,7 +81,7 @@ var adminAuthenticate = (req, res, next) => {
             }
         });
     } else {
-        return res.status(301).json({
+        return res.status(201).json({
             success: false,
             message: 'Invalid Admin credentials'
         });
