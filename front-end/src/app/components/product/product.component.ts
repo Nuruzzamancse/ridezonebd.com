@@ -45,7 +45,7 @@ export class ProductComponent implements OnInit {
         this.router.navigate([`/photo/${id}`]);
       }
       else {
-        this.router.navigate(['/register']);
+        this.router.navigate(['/product']);
       }
     })
 

@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="bf5f021c-4596-4383-a648-9be9c658b917" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/controller/product.js" afterPath="$PROJECT_DIR$/controller/product.js" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/home/home.component.html" afterPath="$PROJECT_DIR$/front-end/src/app/components/home/home.component.html" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/components/home/home.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/home/home.component.ts" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts" afterPath="$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/services/product.service.ts" afterPath="$PROJECT_DIR$/front-end/src/app/services/product.service.ts" />
-      <change beforePath="$PROJECT_DIR$/routes/product.js" afterPath="$PROJECT_DIR$/routes/product.js" />
+      <change beforePath="$PROJECT_DIR$/public/1523190614926.2017-12-08T10_08_46.003Zchristmas.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523191050185.download.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523191168957.download.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523191577420.2017-12-08T10_08_46.003Zchristmas.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523191577752.download.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523194276942.download.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523194283346.download.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public/1523200658046.download.jpeg" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,55 +27,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/app-routing.module.ts">
+      <file leaf-file-name="product.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/services/product.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+            <state relative-caret-position="442">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photo-upload.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="36" column="57" lean-forward="false" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/product.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="44" column="12" lean-forward="false" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/product.js">
+      <file leaf-file-name="home.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <marker date="1523211964473" expanded="false" signature="529:547" ph="..." />
+                <marker date="1523211964473" expanded="false" signature="800:818" ph="..." />
+                <marker date="1523211964473" expanded="false" signature="1089:1107" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/product.js">
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="17">
+              <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1523210448225.download.jpeg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/1523210448225.download.jpeg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1523210542778.2017-12-08T10_08_46.003Zchristmas.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/1523210542778.2017-12-08T10_08_46.003Zchristmas.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,7 +147,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/model/user.js" />
         <option value="$PROJECT_DIR$/front-end/src/index.html" />
-        <option value="$PROJECT_DIR$/front-end/src/app/components/home/home.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/register/register.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/validate.service.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/app.component.html" />
@@ -115,12 +167,14 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/product/product.component.html" />
         <option value="$PROJECT_DIR$/front-end/src/app/services/product.service.ts" />
-        <option value="$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts" />
         <option value="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/controller/product.js" />
         <option value="$PROJECT_DIR$/model/product.js" />
         <option value="$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts" />
         <option value="$PROJECT_DIR$/routes/product.js" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/home/home.component.html" />
       </list>
     </option>
   </component>
@@ -179,46 +233,7 @@
             <path>
               <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ridezonebd.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ridezonebd.com" type="462c0819:PsiDirectoryNode" />
-              <item name="front-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="photo-upload" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,12 +293,12 @@
       <workItem from="1523029580004" duration="597000" />
       <workItem from="1523177459743" duration="132000" />
       <workItem from="1523181814015" duration="134000" />
-      <workItem from="1523184175567" duration="13501000" />
+      <workItem from="1523184175567" duration="16575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70301000" />
+    <option name="totallyTimeSpent" value="73375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -342,27 +357,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controller/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -399,13 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -438,13 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -497,13 +477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front-end/src/app/gaurds/auth.gaurd.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -537,14 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -629,7 +594,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,32 +622,6 @@
           <folding>
             <element signature="e#0#56#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/product.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,9 +659,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts">
+    <entry file="file://$PROJECT_DIR$/routes/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/photo-upload/photo-upload.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
           <caret line="36" column="57" lean-forward="false" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
@@ -730,11 +677,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/product.js">
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/services/product.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="442">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/product/product.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/1523210542778.2017-12-08T10_08_46.003Zchristmas.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/1523210448225.download.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <marker date="1523211964473" expanded="false" signature="529:547" ph="..." />
+            <marker date="1523211964473" expanded="false" signature="800:818" ph="..." />
+            <marker date="1523211964473" expanded="false" signature="1089:1107" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
