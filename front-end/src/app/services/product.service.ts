@@ -19,4 +19,18 @@ export class ProductService {
 
   }
 
+  getProduct(){
+
+    let headers = new Headers();
+
+    headers.append('Content-type','application/json');
+
+    return this.http.get('http://localhost:3000/product',{headers: headers})
+      .map(res => res.json())
+
+  }
+
+
+
+
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent, canActivate: [AuthGaurd]},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGaurd] },
   {path:'product',component:ProductComponent},
-  {path:'photo',component:PhotoUploadComponent},
+  {path:'photo/:id',component:PhotoUploadComponent},
 
 ];
 

@@ -33,16 +33,16 @@ export class ProductComponent implements OnInit {
 
     const product = {
       name: this.name,
-      picture: this.price,
       description: this.description,
       price: this.price
     }
 
-    this.productService.registerProduct(product).subscribe( data=>{
-      if(data.success) {
-        console.log(data);
+    this.productService.registerProduct(product).subscribe( response=>{
+      if(response.success) {
+        console.log(response.data._id);
+        let id = response.data._id
         this.flashMessage.show('Successfully created Product',{cssClass:'alert-success'});
-        this.router.navigate(['/login']);
+        this.router.navigate([`/photo/${id}`]);
       }
       else {
         this.router.navigate(['/register']);

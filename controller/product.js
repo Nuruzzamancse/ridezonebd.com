@@ -19,48 +19,39 @@ var createProduct = (req, res, next) => {
 
 
 
-    upload(req, res, (err) => {
-        if (err) {
-            console.log('In save upload error: ' + err);
+    var name = req.body.name,
+        //picture = req.file.filename ,
+        description = req.body.description,
+        price = req.body.price;
+
+    var myProduct = new Product({
+        name: name,
+       // picture: picture,
+        description: description,
+        price: price
+    });
+    myProduct.save((err, product) => {
+        console.log('In save');
+        if(err) {
+            console.log('In save error ' + err);
             return res.status(404).json({
+
                 message: err,
                 success: false
             });
-        } else {
+        }
+        else {
 
-            var name = req.body.name,
-                picture = req.file.filename,
-                description = req.body.description,
-                price = req.body.price;
-
-            var myProduct = new Product({
-                name: name,
-                picture: picture,
-                description: description,
-                price: price
+            return res.status(200).json({
+                success: true,
+                data: product
             });
-            myProduct.save((err, product) => {
-                console.log('In save');
-                if(err) {
-                    console.log('In save error ' + err);
-                    return res.status(404).json({
-
-                        message: err,
-                        success: false
-                    });
-                }
-                else {
-
-                    return res.status(200).json({
-                        success: true,
-                        data: product
-                    });
 
 
-                }
-            });
         }
     });
+
+
 
 
 };
@@ -100,25 +91,27 @@ var getAllProduct = (req, res, next) => {
 }
 
 var updateProduct = (req, res, next) => {
-    var name = req.body.name,
-        picture = req.body.picture,
-        description = req.body.description,
-        price = req.body.price;
 
-    Product.findById(req.params.id, (err, product) => {
-        if(err){
+
+
+    upload(req, res, (err) => {
+        if (err) {
+            console.log('In save upload error: ' + err);
             return res.status(404).json({
                 message: err,
                 success: false
             });
-        }
-        else {
-            product.name = name || product.name;
-            product.picture = picture || product.picture;
-            product.description = description || product.description;
-            product.price = price || product.price;
+        } else {
 
-            product.save((err, product) => {
+
+            console.log('In upload yes');
+
+            var name = req.body.name,
+                picture = req.file.filename ,
+                description = req.body.description,
+                price = req.body.price;
+
+            Product.findById(req.params.id, (err, product) => {
                 if(err){
                     return res.status(404).json({
                         message: err,
@@ -126,14 +119,33 @@ var updateProduct = (req, res, next) => {
                     });
                 }
                 else {
-                    return res.status(200).json({
-                        success: true,
-                        data: product
+                    product.name = name || product.name;
+                    product.picture = picture || product.picture;
+                    product.description = description || product.description;
+                    product.price = price || product.price;
+
+                    product.save((err, product) => {
+                        if(err){
+                            return res.status(404).json({
+                                message: err,
+                                success: false
+                            });
+                        }
+                        else {
+                            return res.status(200).json({
+                                success: true,
+                                data: product
+                            });
+                        }
                     });
                 }
             });
+
         }
     });
+
+
+
 }
 
 var deleteProduct = (req, res, next) => {
