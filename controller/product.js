@@ -1,35 +1,68 @@
-var Product = require('../model/product');
+var Product = require('../model/product'),
+
+    multer = require('multer');
+
+let store = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, './public');
+    },
+    filename: function(req, file, cb){
+        cb(null, Date.now() + '.' + file.originalname);
+    }
+});
+
+let upload = multer({storage:store}).single('file');
 
 var createProduct = (req, res, next) => {
 
     console.log('this is create product');
 
-    var name = req.body.name,
-        picture = req.body.picture,
-        description = req.body.description,
-        price = req.body.price;
 
-    var myProduct = new Product({
-        name: name,
-        picture: picture,
-        description: description,
-        price: price
-    });
 
-    myProduct.save((err, product) => {
-        if(err) {
+    upload(req, res, (err) => {
+        if (err) {
+            console.log('In save upload error: ' + err);
             return res.status(404).json({
                 message: err,
                 success: false
             });
-        }
-        else {
-            return res.status(200).json({
-                success: true,
-                data: product
+        } else {
+
+            var name = req.body.name,
+                picture = req.file.filename,
+                description = req.body.description,
+                price = req.body.price;
+
+            var myProduct = new Product({
+                name: name,
+                picture: picture,
+                description: description,
+                price: price
+            });
+            myProduct.save((err, product) => {
+                console.log('In save');
+                if(err) {
+                    console.log('In save error ' + err);
+                    return res.status(404).json({
+
+                        message: err,
+                        success: false
+                    });
+                }
+                else {
+
+                    return res.status(200).json({
+                        success: true,
+                        data: product
+                    });
+
+
+                }
             });
         }
     });
+
+
 };
 
 var getProduct = (req, res, next) => {

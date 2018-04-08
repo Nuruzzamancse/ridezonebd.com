@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from "@angular/forms";
 import { RouterModule, Routes} from "@angular/router";
 import {Http, HttpModule} from "@angular/http";
+import { FileUploadModule } from "ng2-file-upload";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +22,9 @@ import { AuthService} from "./services/auth.service";
 import { AuthGaurd} from "./gaurds/auth.gaurd";
 import { ProductComponent } from './components/product/product.component';
 import {ProductService} from "./services/product.service";
+import { FileService } from './services/file.service';
+import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,20 +35,24 @@ import {ProductService} from "./services/product.service";
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
-    ProductComponent
+    ProductComponent,
+    PhotoUploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
+    
+    FileUploadModule,
     FlashMessagesModule.forRoot()
   ],
   providers: [ValidateService,
     FlashMessagesService,
     AuthService,
     AuthGaurd,
-    ProductService
+    ProductService,
+    FileService
 
 
   ],

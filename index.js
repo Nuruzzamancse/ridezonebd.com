@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var bodyPaser = require('body-parser');
 var cors = require('cors');
 var config = require('./config');
+let path= require('path');
 
 var app = express();
 
@@ -14,6 +15,9 @@ mongoose.connect(config.database,  (err) => {
         console.log('Databse connected Successfully');
     }
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 const PORT = 3000;
 
