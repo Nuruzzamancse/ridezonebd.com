@@ -25,6 +25,7 @@ import {ProductService} from "./services/product.service";
 import { FileService } from './services/file.service';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { HttpClient } from '@angular/common/http';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClient } from '@angular/common/http';
     LoginComponent,
     DashboardComponent,
     ProductComponent,
-    PhotoUploadComponent
+    PhotoUploadComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

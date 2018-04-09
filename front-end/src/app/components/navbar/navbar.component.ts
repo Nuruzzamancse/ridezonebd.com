@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
 import {FlashMessagesService} from "angular2-flash-messages";
+import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,13 +11,24 @@ import {FlashMessagesService} from "angular2-flash-messages";
 })
 export class NavbarComponent implements OnInit {
 
+  cart: String;
+
+
+
+
   constructor(
     private authService: AuthService,
     private router: Router,
-    private flashMessage: FlashMessagesService
-  ) { }
+    private flashMessage: FlashMessagesService,
+    public productService: ProductService
+  ) {
+    this.cart = this.productService.loadToken();
+  }
+
+
 
   ngOnInit() {
+
   }
 
   onLogoutClick(){

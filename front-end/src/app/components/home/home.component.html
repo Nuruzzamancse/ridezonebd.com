@@ -1,40 +1,68 @@
-<div class="jumbotron text-center">
-  <h1 style="text-align: center">Ride Zone</h1>
-  <p class="lead"> This is the lasgest online Market in Bangladesh</p>
+<!--<div class="jumbotron text-center" style="height: 130px">-->
+  <!--<h1 style="text-align: center;margin-top: 1px">Ride Zone</h1>-->
+  <!--&lt;!&ndash;<p class="lead"> This is the lasgest online Market in Bangladesh</p>&ndash;&gt;-->
+
+<!--</div>-->
+
+<!--<div class="container-fluid container">-->
+  <!--<div *ngIf="products" class="row">-->
+    <!--<div *ngFor="let product of products;let i = index">-->
+
+      <!--<div *ngIf="(i%4 == 0)" class="col-md-3" style="margin-left: 0px">-->
+        <!--<h2 >{{product.name}}</h2>-->
+        <!--<img src="http://localhost:3000/{{product.picture}}" style="width: 100%">-->
+        <!--<h4><b>Price:</b> <span style="color: crimson">{{product.price}}</span></h4>-->
+
+        <!--<p>{{product.description}}</p>-->
+      <!--</div>-->
+
+      <!--<div *ngIf="(i%4 != 0)" class="col-md-3">-->
+        <!--<h2 >{{product.name}}</h2>-->
+        <!--<img src="http://localhost:3000/{{product.picture}}" style="width: 100%">-->
+        <!--<h4 ><b>Price:</b> <span style="color: green">{{product.price}}</span></h4>-->
+
+        <!--<p>{{product.description}}</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
 
-</div>
+<!--card-->
+
+<!--<div *ngIf="products" class="row">-->
+
+  <!--<div *ngFor="let product of products;let i = index" class="col-md-3">-->
+
+            <!--<div  class="card">-->
+              <!--<h2>{{product.name}}</h2>-->
+              <!--<img src="http://localhost:3000/{{product.picture}}" alt="Avatar" style="width:100%" height="180px" width="250px">-->
+              <!--<div class="container">-->
+                <!--<h4><b>Price:</b>{{product.price}}</h4>-->
+                <!--<p>{{product.description}}</p>-->
+              <!--</div>-->
+            <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--card end-->
+
 
 <div *ngIf="products" class="row">
-  <div *ngFor="let product of products">
-  <div class="col-md-3" style="margin-left: 10px">
-    <h3 style="text-align: center">{{product.name}}</h3>
-    <img src="http://localhost:3000/{{product.picture}}" height="170" width="250">
-
-
-    <p>{{product.description}}</p>
+    <div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">
+        <div class="caption">
+          <p class="description">{{ product.description }}</p>
+          <div class="clearfix">
+            <div class="price pull-left">${{ product.price }}</div>
+            <a (click)="cart(1,product._id,product)" class="btn btn-success pull-right" role="button">Add to Shopping Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!--<div class="col-md-3">-->
-    <!--<h3 style="text-align: center">Special Zeep</h3>-->
-    <!--<img src="../../../assets/images/proxima-the-car-bike-concept2.jpg" height="170" width="250">-->
-
-    <!--<p>This zeep will give you highest speed.</p>-->
-  <!--</div>-->
-  <!--<div class="col-md-3">-->
-    <!--<h3 style="text-align: center">Bike</h3>-->
-    <!--<img src="../../../assets/images/mahindra-centuro.jpg" height="170" width="250">-->
-    <!--<p>Full featured authentication using JSON web tokens. Login and store user data</p>-->
-  <!--</div>-->
-
-  <!--<div class="col-md-2">-->
-    <!--<h3 style="text-align: center">Hybrid Cycle</h3>-->
-    <!--<img src="../../../assets/images/outrider1.jpg" height="170" width="250">-->
-    <!--<p>This is hybrid Cycle</p>-->
-  <!--</div>-->
-
-  <!--</div>-->
-
-</div>
 
 
 

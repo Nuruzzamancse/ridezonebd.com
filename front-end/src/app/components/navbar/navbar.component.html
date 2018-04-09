@@ -8,11 +8,17 @@
       <!--<li><a href="#">Page 2</a></li>-->
     </ul>
     <ul class="nav navbar-nav navbar-right">
+
       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/profile']"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
 
 
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-user"></span>Add Product</a></li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><i class="glyphicon glyphicon-shopping-cart"></i>Cart
+
+        <span class="badge">{{productService.getProductCartSize()||cart}}</span>
+
+      </a></li>
 
 
       <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/register']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
