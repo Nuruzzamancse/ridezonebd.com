@@ -1,3 +1,45 @@
-<p>
-  cart works!
-</p>
+<div class="panel panel-primary" style="width: 70%; margin-left: 15%">
+  <div class="panel-heading">Cart Checkout</div>
+  <div class="panel-body">
+
+
+      <table  class="table">
+        <thead>
+        <tr>
+          <th style="text-align: center">Product Name</th>
+          <th style="text-align: center">Product Image</th>
+          <th style="text-align: center">Product Quantity</th>
+          <th style="text-align: center">Product Price</th>
+          <th style="text-align: center">Price in $</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let product of myProductArray; let i = index">
+
+        <tr  *ngIf="(i%2==0)">
+          <td style="text-align: center">{{product.myProduct.name}}</td>
+
+          <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
+          </td>
+          <td style="text-align: center">{{product.myProductCount}}</td>
+          <td style="text-align: center">{{product.myProduct.price}}</td>
+          <td style="text-align: center">{{product.myProduct.name}}</td>
+        </tr>
+
+        <tr class="success" *ngIf="(i%2!=0)">
+          <td style="text-align: center">{{product.myProduct.name}}</td>
+
+          <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
+          </td>
+          <td style="text-align: center">{{product.myProductCount}}</td>
+          <td style="text-align: center">{{product.myProduct.price}}</td>
+          <td style="text-align: center">{{product.myProduct.name}}</td>
+        </tr>
+        </tbody>
+        <div *ngIf="!myProductArray" class="alert alert-warning">
+          <strong>Warning!</strong> You have not added any cart to Buy.
+        </div>
+      </table>
+
+
+  </div>
+</div>

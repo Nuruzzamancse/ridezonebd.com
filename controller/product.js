@@ -1,4 +1,5 @@
 var Product = require('../model/product'),
+    Category = require('../model/category');
 
     multer = require('multer');
 

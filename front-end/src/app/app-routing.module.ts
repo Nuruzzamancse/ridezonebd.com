@@ -8,6 +8,7 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import { AuthGaurd} from "./gaurds/auth.gaurd";
 import { ProductComponent} from "./components/product/product.component";
 import { PhotoUploadComponent } from "./components/photo-upload/photo-upload.component";
+import {CartComponent} from "./components/cart/cart.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent, canActivate: [AuthGaurd] },
   {path:'product',component:ProductComponent},
   {path:'photo/:id',component:PhotoUploadComponent},
+  {path:'cart', component: CartComponent}
 
 ];
 
