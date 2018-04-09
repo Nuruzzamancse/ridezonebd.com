@@ -22,7 +22,7 @@
           </td>
           <td style="text-align: center">{{product.myProductCount}}</td>
           <td style="text-align: center">{{product.myProduct.price}}</td>
-          <td style="text-align: center">{{product.myProduct.name}}</td>
+          <td style="text-align: center">{{ product.myProduct.price*product.myProductCount}}</td>
         </tr>
 
         <tr class="success" *ngIf="(i%2!=0)">
@@ -32,13 +32,17 @@
           </td>
           <td style="text-align: center">{{product.myProductCount}}</td>
           <td style="text-align: center">{{product.myProduct.price}}</td>
-          <td style="text-align: center">{{product.myProduct.name}}</td>
+          <td style="text-align: center">{{product.myProduct.price*product.myProductCount}}</td>
         </tr>
         </tbody>
         <div *ngIf="!myProductArray" class="alert alert-warning">
           <strong>Warning!</strong> You have not added any cart to Buy.
         </div>
       </table>
+
+    <button style="float: left;margin-bottom: 2%;height: 60px" type="button" class="btn btn-primary active" (click)="continueShopping()">Confirm Shopping</button>
+
+    <h3 style="float:right;margin-bottom: 2%">Total Price = {{sum}}</h3>
 
 
   </div>

@@ -22,12 +22,16 @@ var createProduct = (req, res, next) => {
 
     var name = req.body.name,
         //picture = req.file.filename ,
+        category = req.body.category,
         description = req.body.description,
         price = req.body.price;
+
+
 
     var myProduct = new Product({
         name: name,
        // picture: picture,
+        category: category,
         description: description,
         price: price
     });
@@ -42,6 +46,7 @@ var createProduct = (req, res, next) => {
             });
         }
         else {
+
 
             return res.status(200).json({
                 success: true,
@@ -69,6 +74,23 @@ var getProduct = (req, res, next) => {
             return res.status(200).json({
                 success: true,
                 data: product
+            });
+        }
+    });
+}
+
+var getCategory = (req, res, next) => {
+    Product.findById(req.params.id, (err, category) => {
+        if(err){
+            return res.status(404).json({
+                message: err,
+                success: false
+            });
+        }
+        else {
+            return res.status(200).json({
+                success: true,
+                data: category
             });
         }
     });
@@ -171,5 +193,6 @@ module.exports = {
     getAllProduct,
     getProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    getCategory
 }

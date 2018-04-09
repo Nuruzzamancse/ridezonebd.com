@@ -5,7 +5,7 @@ var authController = require('../controller/auth');
 
 router.post('/', userController.createUser);
 router.get('/', authController.adminAuthenticate, userController.getAllUser);
-router.get('/:id', authController.adminAuthenticate, userController.getUser);
+router.get('/:id', userController.getUser);
 router.delete('/:id', authController.adminAuthenticate, userController.deleteUser);
 router.patch('/:id', authController.adminAuthenticate, userController.updateUser);
 

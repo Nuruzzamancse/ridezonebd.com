@@ -38,6 +38,18 @@ export class ProductService {
   }
 
 
+  getCategory(){
+
+    let headers = new Headers();
+
+    headers.append('Content-type','application/json');
+
+    return this.http.get('http://localhost:3000/category',{headers: headers})
+      .map(res => res.json())
+
+  }
+
+
 
   storeUserDatta(paramcnt, userId, product){
 

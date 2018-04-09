@@ -51,7 +51,9 @@
 
 <div *ngIf="products" class="row">
     <div *ngFor="let product of products;let i = index" class="col-sm-6 col-md-4">
+
       <div class="thumbnail">
+        <h3 style="color: deepskyblue;text-align: center">{{product.name}}</h3>
         <img src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive">
         <div class="caption">
           <p class="description">{{ product.description }}</p>

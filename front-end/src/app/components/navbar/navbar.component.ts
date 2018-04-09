@@ -13,8 +13,7 @@ export class NavbarComponent implements OnInit {
 
   cart: String;
 
-
-
+  isAdmin: number = 0;
 
   constructor(
     private authService: AuthService,
@@ -23,6 +22,9 @@ export class NavbarComponent implements OnInit {
     public productService: ProductService
   ) {
     this.cart = this.productService.loadToken();
+    if(localStorage.getItem('isAdmin')=="true")
+      this.isAdmin =1;
+        console.log(this.isAdmin);
   }
 
 

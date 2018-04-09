@@ -45,17 +45,17 @@ export class AuthService {
       .map( res => res.json());
   }
 
-  //
-  // getProfile(){
-  //
-  //   let headers = new Headers();
-  //   this.loadToken();
-  //   headers.append('Authorization', this.authToken);
-  //   headers.append('Content-type','application/json');
-  //   return this.http.get('users/profile' ,{headers:headers})
-  //     .map( res => res.json());
-  //
-  // }
+
+  getSiingleProfile(loginId){
+
+    let headers = new Headers();
+    this.loadToken();
+
+    headers.append('Content-type','application/json');
+    return this.http.get(`http://localhost:3000/user/${loginId}` ,{headers:headers})
+      .map( res => res.json());
+
+  }
 
   getProfile(){
     let headers = new Headers();
@@ -65,8 +65,6 @@ export class AuthService {
     // console.log('Token '+this.authToken);
 
     headers.append('authorization',this.authToken);
-
-
 
     headers.append('Content-Type','application/json');
 

@@ -16,6 +16,10 @@ export class ProductComponent implements OnInit {
   description: String;
   picture: String;
   price: String;
+  category: String;
+  Category: object;
+
+
 
 
 
@@ -24,18 +28,35 @@ export class ProductComponent implements OnInit {
     private router: Router,
     private flashMessage: FlashMessagesService,
     private validateService: ValidateService
-  ) { }
+  ) {
+      this.Category = [];
+  }
 
   ngOnInit() {
+
+    this.productService.getCategory()
+      .subscribe( response=>{
+
+
+          this.Category = response.data;
+
+
+
+
+      })
+
   }
 
   onRegisterSubmit(){
 
     const product = {
       name: this.name,
+      category: this.category,
       description: this.description,
       price: this.price
     }
+
+    console.log(this.category);
 
     this.productService.registerProduct(product).subscribe( response=>{
       if(response.success) {

@@ -3,7 +3,7 @@ import { Router , CanActivate} from "@angular/router";
 import { AuthService} from "../services/auth.service";
 
 @Injectable()
-export class AuthGaurd implements CanActivate{
+export class AdminGaurd implements CanActivate{
 
 
   constructor(
@@ -14,19 +14,6 @@ export class AuthGaurd implements CanActivate{
   }
 
   canActivate(){
-    if(this.authService.loggedIn()){
-      return true;
-    }
-
-
-
-    else {
-      this.router.navigate(['/login']);
-      return false;
-    }
-  }
-
-  canActivateAdmin(){
     if(this.authService.loggedIn()&&localStorage.getItem('isAdmin')=="true"){
       return true;
     }
@@ -38,6 +25,7 @@ export class AuthGaurd implements CanActivate{
       return false;
     }
   }
+
 
 
 }

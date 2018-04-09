@@ -34,6 +34,9 @@ app.use('/user', userRoute);
 var authRoute = require('./routes/auth');
 app.use('/auth', authRoute);
 
+var categoryRouter = require('./routes/category');
+app.use('/category',categoryRouter);
+
 app.get('/',(req,res)=>{
     res.send('Foobar');
 })

@@ -1,11 +1,53 @@
-<div *ngIf="users">
+<div class="panel panel-primary" style="width: 70%; margin-left: 15%">
+  <div class="panel-heading">Profile</div>
+  <div class="panel-body">
 
-  <div *ngFor="let user of users">
-    <h2 class="page-header">{{user.name}}</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Username: {{user.username}}</li>
-      <li class="list-group-item">Email: {{user.email}}</li>
-    </ul>
+
+    <table  class="table">
+      <thead>
+      <tr>
+        <th style="text-align: center">Name</th>
+        <th style="text-align: center">Email</th>
+        <th style="text-align: center">Username</th>
+
+      </tr>
+      </thead>
+
+
+        <tbody *ngFor="let user of users;let i = index">
+                <tr  *ngIf="(i%2==0)">
+                  <td style="text-align: center">{{user.name}}</td>
+                  <td style="text-align: center">{{user.email}}</td>
+                  <td style="text-align: center">{{user.username}}</td>
+                </tr>
+
+                <tr class="success" *ngIf="(i%2!=0)">
+                  <td style="text-align: center">{{user.name}}</td>
+                  <td style="text-align: center">{{user.email}}</td>
+                  <td style="text-align: center">{{user.username}}</td>
+
+                </tr>
+        </tbody>
+
+
+
+        <tbody *ngIf="!users">
+        <tr class="success">
+          <td style="text-align: center">{{singleUser.name}}</td>
+          <td style="text-align: center">{{singleUser.email}}</td>
+          <td style="text-align: center">{{singleUser.username}}</td>
+        </tr>
+        </tbody>
+
+
+    </table>
+
+
+
   </div>
-
 </div>
+
+
+
+
+

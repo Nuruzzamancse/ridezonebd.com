@@ -10,16 +10,27 @@ import { Router} from "@angular/router";
 export class ProfileComponent implements OnInit {
 
   users: object;
+  singleUser: object;
+
 
   constructor(private authService: AuthService, private router: Router) {
     this.users = [];
+    this.singleUser = null;
   }
 
   ngOnInit() {
     this.authService.getProfile().subscribe(response =>{
         this.users = response.data;
-        console.log(this.users);
+        //console.log(this.users);
       });
+
+    //console.log("Here " + localStorage.getItem('loginId'));
+
+    this.authService.getSiingleProfile(localStorage.getItem('loginId'))
+      .subscribe(response=>{
+        this.singleUser = response.data;
+        //console.log(this.singleUser);
+      })
   }
 
 }

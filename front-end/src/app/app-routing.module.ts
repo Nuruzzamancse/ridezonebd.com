@@ -9,6 +9,7 @@ import { AuthGaurd} from "./gaurds/auth.gaurd";
 import { ProductComponent} from "./components/product/product.component";
 import { PhotoUploadComponent } from "./components/photo-upload/photo-upload.component";
 import {CartComponent} from "./components/cart/cart.component";
+import {AdminGaurd} from "./gaurds/admin.gaurd";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent, canActivate: [AuthGaurd]},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGaurd] },
-  {path:'product',component:ProductComponent},
+  {path:'product',component:ProductComponent,canActivate: [AdminGaurd]},
   {path:'photo/:id',component:PhotoUploadComponent},
   {path:'cart', component: CartComponent}
 

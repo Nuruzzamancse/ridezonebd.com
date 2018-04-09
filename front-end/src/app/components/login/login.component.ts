@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   email : String;
   password: string;
 
+
   constructor(
     private authService: AuthService,
     private flashMessage: FlashMessagesService,
@@ -40,7 +41,13 @@ export class LoginComponent implements OnInit {
 
       if(res.success){
 
-        console.log(res.data);
+        // console.log(res.data.isAdmin);
+
+        localStorage.setItem('isAdmin',res.data.isAdmin);
+        localStorage.setItem('loginId',res.data._id);
+
+
+
         this.authService.storeUserDatta(res.token, res.data);
 
 
