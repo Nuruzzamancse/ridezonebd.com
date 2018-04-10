@@ -142,8 +142,9 @@ var updateProduct = (req, res, next) => {
                     });
                 }
                 else {
+                    product.picture.push(picture);
                     product.name = name || product.name;
-                    product.picture = picture || product.picture;
+                    // product.picture = picture || product.picture;
                     product.description = description || product.description;
                     product.price = price || product.price;
 
