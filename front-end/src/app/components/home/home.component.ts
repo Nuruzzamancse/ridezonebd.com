@@ -32,4 +32,9 @@ export class HomeComponent implements OnInit {
 
   }
 
+  detailsView(id){
+    this.router.navigate([`/details/${id}`])
+
+  }
+
 }

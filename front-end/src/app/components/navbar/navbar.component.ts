@@ -15,12 +15,18 @@ export class NavbarComponent implements OnInit {
 
   isAdmin: number = 0;
 
+  product:any;
+
+  search: String;
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private flashMessage: FlashMessagesService,
     public productService: ProductService
   ) {
+
+
     this.cart = this.productService.loadToken();
     if(localStorage.getItem('isAdmin')=="true")
       this.isAdmin =1;
@@ -30,7 +36,10 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.productService.getProduct()
+      .subscribe(resposnse=>{
+          this.product = resposnse.data;
+      })
   }
 
   onLogoutClick(){
@@ -41,6 +50,16 @@ export class NavbarComponent implements OnInit {
 
     this.router.navigate(['/login']);
     return false;
+
+  }
+
+  onSearchSubmit(){
+
+      for(let i=0;i<this.product.length;i++)
+        if(this.product[i].name == this.search){
+            this.router.navigate([`/details/${this.product[i]._id}`])
+         // console.log(this.product[i].name);
+        }
 
   }
 

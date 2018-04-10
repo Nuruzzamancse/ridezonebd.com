@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 
   users: any;
 
+  show:any;
+
   arrObj:object[] = new Array(0);
 
 
@@ -27,6 +29,7 @@ export class DashboardComponent implements OnInit {
     this.singleUser = [];
     this.product = [];
     this.users = [];
+    this.show = 0;
   }
 
   ngOnInit() {
@@ -55,6 +58,7 @@ export class DashboardComponent implements OnInit {
 
   getData(){
 
+    this.show=1;
     console.log(this.singleUser);
 
     for(let i=0;i<this.singleUser.length;i++)

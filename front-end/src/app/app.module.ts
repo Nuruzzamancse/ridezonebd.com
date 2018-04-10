@@ -27,6 +27,7 @@ import { PhotoUploadComponent } from './components/photo-upload/photo-upload.com
 import { HttpClient } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
 import {AdminGaurd} from "./gaurds/admin.gaurd";
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {AdminGaurd} from "./gaurds/admin.gaurd";
     DashboardComponent,
     ProductComponent,
     PhotoUploadComponent,
-    CartComponent
+    CartComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <div class="panel panel-info" style="width: 70%; margin-left: 15%">
-  <div class="panel-heading" style="height: 60px" ><b class="text-warning">If You are Admin then click to Show Wish List</b> <button class="btn btn-primary" type="button" style="float:right" (click)="getData()">Show List</button></div>
+  <div class="panel-heading" style="height: 60px" ><b class="text-warning">If You are Admin then click to Show Wish List</b> <button [disabled]="show==1" class="btn btn-primary" type="button" style="float:right" (click)="getData()">Show List</button></div>
             <div class="panel-body">
 
               <table  class="table">
@@ -10,13 +10,14 @@
                   <th >Product Image</th>
                 </tr>
                 </thead>
+
                 <tbody *ngFor="let product of arrObj; let i = index">
 
                 <tr  *ngIf="(i%2==0)">
                   <td style="text-align: center">{{user}}</td>
                   <td style="text-align: center">{{product.name}}</td>
 
-                  <td style="text-align: center"><img src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
+                  <td style="text-align: center"><img src="http://localhost:3000/{{product.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
                   </td>
                 </tr>
 
@@ -24,7 +25,7 @@
                   <td></td>
                   <td style="text-align: center">{{product.name}}</td>
 
-                  <td style="text-align: center"><img src="http://localhost:3000/{{product.picture}}" alt="..." class="img-responsive" height="50px" width="80px">
+                  <td style="text-align: center"><img src="http://localhost:3000/{{product.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
                   </td>
 
                 </tr>
