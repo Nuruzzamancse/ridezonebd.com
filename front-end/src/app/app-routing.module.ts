@@ -11,6 +11,7 @@ import { PhotoUploadComponent } from "./components/photo-upload/photo-upload.com
 import {CartComponent} from "./components/cart/cart.component";
 import {AdminGaurd} from "./gaurds/admin.gaurd";
 import {DetailsComponent} from "./components/details/details.component";
+import {CheckoutComponent} from "./components/checkout/checkout.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'product',component:ProductComponent,canActivate: [AdminGaurd]},
   {path:'photo/:id',component:PhotoUploadComponent},
   {path:'details/:id',component:DetailsComponent},
-  {path:'cart', component: CartComponent}
+  {path:'cart', component: CartComponent},
+  {path:'checkout', component: CheckoutComponent, canActivate: [AuthGaurd]}
 
 ];
 

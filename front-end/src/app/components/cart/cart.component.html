@@ -10,7 +10,8 @@
           <th style="text-align: center">Product Image</th>
           <th style="text-align: center">Product Quantity</th>
           <th style="text-align: center">Product Price</th>
-          <th style="text-align: center">Price in $</th>
+          <th style="text-align: center">Total Product Price</th>
+          <th>Action</th>
         </tr>
         </thead>
         <tbody *ngFor="let product of myProductArray; let i = index">
@@ -21,8 +22,12 @@
           <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
           </td>
           <td style="text-align: center">{{product.myProductCount}}</td>
-          <td style="text-align: center">{{product.myProduct.price}}</td>
-          <td style="text-align: center">{{ product.myProduct.price*product.myProductCount}}</td>
+          <td style="text-align: center">${{product.myProduct.price}}</td>
+          <td style="text-align: center">${{ product.myProduct.price*product.myProductCount}}</td>
+          <td class="col-sm-1 col-md-1">
+            <button type="button" class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Remove
+            </button></td>
         </tr>
 
         <tr class="success" *ngIf="(i%2!=0)">
@@ -31,19 +36,50 @@
           <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
           </td>
           <td style="text-align: center">{{product.myProductCount}}</td>
-          <td style="text-align: center">{{product.myProduct.price}}</td>
-          <td style="text-align: center">{{product.myProduct.price*product.myProductCount}}</td>
+          <td style="text-align: center">${{product.myProduct.price}}</td>
+          <td style="text-align: center">${{product.myProduct.price*product.myProductCount}}</td>
+          <td class="col-sm-1 col-md-1">
+            <button type="button" class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Remove
+            </button></td>
+
         </tr>
+
+
+
         </tbody>
         <div *ngIf="!myProductArray" class="alert alert-warning">
           <strong>Warning!</strong> You have not added any cart to Buy.
         </div>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h4 style="margin-bottom: 2%">Total = ${{sum}}</h4></td>
+
+        <td></td>
+
+
+
+        <tr>
+
+          <td>
+            <button type="button" class="btn btn-default"  >
+              <span class="glyphicon glyphicon-shopping-cart"></span> <a [routerLink]="['/']" style="text-decoration: none">Continue Shopping</a>
+            </button></td>
+
+          <td></td>
+          <td></td>
+          <td></td>
+
+          <td></td>
+          <td>
+            <button (click)="continueShopping()" type="button" class="btn btn-success" >
+              Checkout <span class="glyphicon glyphicon-play"></span>
+            </button></td>
+
+        </tr>
       </table>
-
-    <button style="float: left;margin-bottom: 2%;height: 60px" type="button" class="btn btn-primary active" (click)="continueShopping()">Confirm Shopping</button>
-
-    <h3 style="float:right;margin-bottom: 2%">Total Price = {{sum}}</h3>
-
 
   </div>
 </div>

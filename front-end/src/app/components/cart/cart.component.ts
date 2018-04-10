@@ -44,7 +44,7 @@ export class CartComponent implements OnInit {
 
   continueShopping(){
     if(this.authServie.loggedIn()) {
-      this.router.navigate(['/dashboard'])
+      this.router.navigate(['/checkout'])
       let User = {
         wishList:this.arrObj
       }

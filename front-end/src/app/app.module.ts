@@ -28,6 +28,7 @@ import { HttpClient } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
 import {AdminGaurd} from "./gaurds/admin.gaurd";
 import { DetailsComponent } from './components/details/details.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DetailsComponent } from './components/details/details.component';
     ProductComponent,
     PhotoUploadComponent,
     CartComponent,
-    DetailsComponent
+    DetailsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
