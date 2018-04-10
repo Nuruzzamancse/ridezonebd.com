@@ -57,6 +57,17 @@ export class AuthService {
 
   }
 
+  UpdateProfile(loginId, User){
+
+    let headers = new Headers();
+    this.loadToken();
+
+    headers.append('Content-type','application/json');
+    return this.http.patch(`http://localhost:3000/user/${loginId}` ,User,{headers:headers})
+      .map( res => res.json());
+
+  }
+
   getProfile(){
     let headers = new Headers();
 

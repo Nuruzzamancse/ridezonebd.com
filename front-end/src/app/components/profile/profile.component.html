@@ -32,7 +32,7 @@
 
 
         <tbody *ngIf="!users">
-        <tr class="success">
+        <tr *ngIf="singleUser" class="success">
           <td style="text-align: center">{{singleUser.name}}</td>
           <td style="text-align: center">{{singleUser.email}}</td>
           <td style="text-align: center">{{singleUser.username}}</td>

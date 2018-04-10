@@ -26,6 +26,7 @@ import { FileService } from './services/file.service';
 import { PhotoUploadComponent } from './components/photo-upload/photo-upload.component';
 import { HttpClient } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
+import {AdminGaurd} from "./gaurds/admin.gaurd";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { CartComponent } from './components/cart/cart.component';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    
+
     FileUploadModule,
     FlashMessagesModule.forRoot()
   ],
@@ -54,7 +55,8 @@ import { CartComponent } from './components/cart/cart.component';
     AuthService,
     AuthGaurd,
     ProductService,
-    FileService
+    FileService,
+    AdminGaurd
 
 
   ],

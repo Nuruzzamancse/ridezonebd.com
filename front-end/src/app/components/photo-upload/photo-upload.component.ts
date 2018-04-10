@@ -43,7 +43,6 @@ export class PhotoUploadComponent implements OnInit {
   ){
 
 
-
     const id = this.route.snapshot.paramMap.get('id');
     ur2 = `http://localhost:3000/product/${id}`;
     console.log('Here '+id+' there');

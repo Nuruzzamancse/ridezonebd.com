@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
 
         this.flashMessage.show('You are now Logged In!', { cssClass: 'alert-success' } );
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/']);
       }
       else{
         this.flashMessage.show('Something went wrong !', { cssClass: 'alert-danger' } );

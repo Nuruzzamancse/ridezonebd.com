@@ -86,6 +86,9 @@ var getAllUser = (req, res, next) => {
 }
 
 var updateUser = (req, res, next) => {
+
+    console.log('In Update');
+
     var name = req.body.name,
         email = req.body.email,
         userName = req.body.username,
@@ -108,12 +111,17 @@ var updateUser = (req, res, next) => {
 
             User.save((err, User) => {
                 if(err){
+
+                    console.log('Update error' + err);
+
                     return res.status(404).json({
                         message: err,
                         success: false
                     });
                 }
                 else {
+                    console.log('Update successfully');
+
                     return res.status(200).json({
                         success: true,
                         data: User
