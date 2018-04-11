@@ -55,11 +55,18 @@ export class NavbarComponent implements OnInit {
 
   onSearchSubmit(){
 
+    let sbmt = 1;
       for(let i=0;i<this.product.length;i++)
-        if(this.product[i].name == this.search){
-            this.router.navigate([`/details/${this.product[i]._id}`])
+        if((this.product[i].name).toLowerCase() == this.search.toLowerCase()){
+        console.log('here');
+        this.router.navigate([`/details/${this.product[i]._id}`])
          // console.log(this.product[i].name);
+          sbmt = 2;
         }
+
+        if(sbmt==1)
+    this.flashMessage.show('Product Not Found !', { cssClass: 'alert-danger' } );
+      console.log('Not found');
 
   }
 

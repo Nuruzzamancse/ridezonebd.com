@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import { FileService } from '../../services/file.service';
 import {ProductService} from "../../services/product.service";
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 const uri = 'http://localhost:3000/product';
@@ -28,6 +28,8 @@ export class PhotoUploadComponent implements OnInit {
   }
 
 
+
+
   uploader:FileUploader;
 
   attachmentList:any = [];
@@ -39,6 +41,7 @@ export class PhotoUploadComponent implements OnInit {
     private _fileService:FileService,
     private productService: ProductService,
     private route: ActivatedRoute,
+    private router: Router
 
   ){
 
@@ -54,6 +57,8 @@ export class PhotoUploadComponent implements OnInit {
     this.uploader.onCompleteItem = (item:any, response:any , status:any, headers:any) => {
       this.attachmentList.push(JSON.parse(response));
       console.log(item);
+
+      this.router.navigate(['/']);
     }
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {Router} from "@angular/router";
+import {ProductService} from "../../services/product.service";
 
 
 
@@ -19,10 +20,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private flashMessage: FlashMessagesService,
-    private router: Router
+    private router: Router,
+    private productService: ProductService
   ) { }
 
   ngOnInit() {
+
+
+
   }
 
 
@@ -52,6 +57,9 @@ export class LoginComponent implements OnInit {
 
 
         this.flashMessage.show('You are now Logged In!', { cssClass: 'alert-success' } );
+
+
+
         this.router.navigate(['/']);
       }
       else{

@@ -5,6 +5,7 @@ var cors = require('cors');
 var config = require('./config');
 let path= require('path');
 
+
 var app = express();
 
 
@@ -25,6 +26,8 @@ app.use(cors());
 
 app.use(bodyPaser.json());
 
+console.log('In the server');
+
 var productRoute = require('./routes/product');
 app.use('/product', productRoute);
 
@@ -36,6 +39,9 @@ app.use('/auth', authRoute);
 
 var categoryRouter = require('./routes/category');
 app.use('/category',categoryRouter);
+
+var stripe = require('./routes/stripe');
+app.use('/stripe', stripe);
 
 app.get('/',(req,res)=>{
     res.send('Foobar');

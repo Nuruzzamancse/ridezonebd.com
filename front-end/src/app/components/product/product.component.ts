@@ -13,11 +13,13 @@ export class ProductComponent implements OnInit {
 
 
   name: String;
+  code: String;
   description: String;
   picture: String;
   price: String;
   category: String;
   Category: object;
+  avl: String;
 
 
 
@@ -51,9 +53,11 @@ export class ProductComponent implements OnInit {
 
     const product = {
       name: this.name,
+      code: this.code,
       category: this.category,
       description: this.description,
-      price: this.price
+      price: this.price,
+      avl: this.avl
     }
 
     console.log(this.category);

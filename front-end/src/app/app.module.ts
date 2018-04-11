@@ -29,6 +29,8 @@ import { CartComponent } from './components/cart/cart.component';
 import {AdminGaurd} from "./gaurds/admin.gaurd";
 import { DetailsComponent } from './components/details/details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { EditproductComponent } from './components/editproduct/editproduct.component';
+import { StripeService} from "./common/stripe.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     PhotoUploadComponent,
     CartComponent,
     DetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    EditproductComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     AuthGaurd,
     ProductService,
     FileService,
-    AdminGaurd
+    AdminGaurd,
+    StripeService
 
 
   ],

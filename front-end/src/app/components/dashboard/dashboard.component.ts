@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
   users: any;
 
   show:any;
+  myObj: any = [];
+
+  buyObj = [];
 
   arrObj:object[] = new Array(0);
 
@@ -37,20 +40,62 @@ export class DashboardComponent implements OnInit {
       .subscribe(response=>{
         this.singleUser = response.data.wishList;
         this.user =  response.data.name;
-        //console.log(this.singleUser);
 
       })
 
     this.authService.getProfile().subscribe(response=>{
       this.users = response.data;
-    })
+
+      for (let user of this.users) {
+        let cnt = 1;
+        let userWishListsId = user.wishList;
+        for (let productId of userWishListsId) {
+          this.productService.getSingleProduct(productId).subscribe(response=>{
+            let dummyObj:any = {};
+
+            if(cnt==1)
+              dummyObj.name = user.name;
+            dummyObj.product = response.data;
+            console.log(dummyObj);
+            this.buyObj.push(dummyObj);
+            console.log('-------===========----------')
+            console.log(this.buyObj);
+            cnt++;
+          })
+
+        }
+        console.log('-----------------');
+
+        let cnt2 = 1;
+
+        let userBuyList = user.buyList;
+
+        for (let productId of userBuyList) {
+          this.productService.getSingleProduct(productId).subscribe(response=>{
+            let dummyObj:any = {};
+
+            if(cnt2==1)
+              dummyObj.name = user.name;
+            dummyObj.product = response.data;
+            console.log(dummyObj);
+            this.myObj.push(dummyObj);
+            console.log('Fucking Here')
+            console.log(this.myObj);
+            cnt2++;
+          })
+
+        }
 
 
 
 
 
 
-    // console.log(this.arrObj);
+
+      }
+
+    });
+
 
 
   }
@@ -64,7 +109,6 @@ export class DashboardComponent implements OnInit {
     for(let i=0;i<this.singleUser.length;i++)
     this.productService.getSingleProduct(this.singleUser[i]).subscribe(response=>{
         this.arrObj.push(response.data);
-
         console.log(response.data);
       })
 

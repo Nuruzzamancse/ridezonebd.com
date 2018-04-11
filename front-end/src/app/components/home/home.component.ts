@@ -9,14 +9,18 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  products : object;
+  products : any = [];
 
+  isAdmin:any;
 
   constructor(
     private productService: ProductService,
     private router: Router
   ) {
     this.products = [];
+    if(localStorage.getItem('isAdmin')=="true")
+      this.isAdmin =1;
+    console.log(this.isAdmin);
   }
 
   ngOnInit() {
@@ -35,6 +39,29 @@ export class HomeComponent implements OnInit {
   detailsView(id){
     this.router.navigate([`/details/${id}`])
 
+  }
+
+  editProduct(id){
+    this.router.navigate([`/edit/${id}`])
+  }
+
+  // deleteProduct(product){
+  //   console.log('delete working');
+  //   this.productService.deleteProduct(product._id).subscribe(resoponse=>{
+  //     console.log(resoponse);
+  //     let productIndex = this.products.indexOf(product);
+  //     let myProducts = this.products;
+  //     myProducts.slice(productIndex, 1);
+  //     this.products = myProducts;
+  //   });
+  //   // this.router.navigate(['/']);
+  // }
+
+  delFunc(prod){
+    this.products.splice(this.products.indexOf(prod), 1);
+    this.productService.deleteProduct(prod._id).subscribe(respnse=>{
+
+    });
   }
 
 }

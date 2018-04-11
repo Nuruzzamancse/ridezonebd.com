@@ -7,12 +7,14 @@ export class ProductService {
   productCartSize = 0;
   myProductArray: any = [];
 
+  authToken: any;
+
   constructor(
     private http: Http
   ) { }
 
   getProductCartSize() {
-    return this.productCartSize;
+    return localStorage.getItem('cnt');
   }
 
   registerProduct(product){
@@ -47,6 +49,25 @@ export class ProductService {
       .map(res => res.json())
 
   }
+
+
+  deleteProduct(id){
+
+    let headers = new Headers();
+
+    this.getToken();
+
+    // console.log('Token '+this.authToken);
+
+    headers.append('authorization',this.authToken);
+
+    headers.append('Content-type','application/json');
+
+    return this.http.delete(`http://localhost:3000/product/${id}`,{headers: headers})
+      .map(res => res.json())
+
+  }
+
 
 
   getCategory(){
@@ -136,6 +157,21 @@ export class ProductService {
 
   loadToken(){
     return localStorage.getItem('cnt');
+  }
+
+  getToken(){
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
+  }
+
+  updateProduct(id,product){
+
+    let headers = new Headers();
+
+    headers.append('Content-type','application/json');
+
+    return this.http.patch(`http://localhost:3000/product/${id}`,product,{headers: headers})
+      .map(res => res.json())
   }
 
 

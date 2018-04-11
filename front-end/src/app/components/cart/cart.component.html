@@ -16,21 +16,8 @@
         </thead>
         <tbody *ngFor="let product of myProductArray; let i = index">
 
-        <tr  *ngIf="(i%2==0)">
-          <td style="text-align: center">{{product.myProduct.name}}</td>
 
-          <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
-          </td>
-          <td style="text-align: center">{{product.myProductCount}}</td>
-          <td style="text-align: center">${{product.myProduct.price}}</td>
-          <td style="text-align: center">${{ product.myProduct.price*product.myProductCount}}</td>
-          <td class="col-sm-1 col-md-1">
-            <button type="button" class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove"></span> Remove
-            </button></td>
-        </tr>
-
-        <tr class="success" *ngIf="(i%2!=0)">
+        <tr class="success" *ngIf="product.myProductCount">
           <td style="text-align: center">{{product.myProduct.name}}</td>
 
           <td style="text-align: center"><img src="http://localhost:3000/{{product.myProduct.picture[0]}}" alt="..." class="img-responsive" height="50px" width="80px">
@@ -38,10 +25,22 @@
           <td style="text-align: center">{{product.myProductCount}}</td>
           <td style="text-align: center">${{product.myProduct.price}}</td>
           <td style="text-align: center">${{product.myProduct.price*product.myProductCount}}</td>
-          <td class="col-sm-1 col-md-1">
-            <button type="button" class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove"></span> Remove
-            </button></td>
+
+          <td>
+          <ul class="nav nav-pills nav-stacked">
+
+            <li class="dropdown">
+              <button class="dropdown-toggle" class="btn btn-danger" data-toggle="dropdown"><span class="glyphicon glyphicon-remove"></span> Remove</button>
+              <ul class="dropdown-menu">
+                <li (click)="reduceByOne(product.myProduct.name)"><a >Remove 1</a></li>
+                <li (click)="removeAll(product.myProduct.name)"><a >Remove all</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          </td>
+
+
 
         </tr>
 
