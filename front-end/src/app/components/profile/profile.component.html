@@ -9,6 +9,7 @@
         <th style="text-align: center">Name</th>
         <th style="text-align: center">Email</th>
         <th style="text-align: center">Username</th>
+        <th style="text-align: center">Action</th>
 
       </tr>
       </thead>
@@ -19,12 +20,20 @@
                   <td style="text-align: center">{{user.name}}</td>
                   <td style="text-align: center">{{user.email}}</td>
                   <td style="text-align: center">{{user.username}}</td>
+                  <td style="text-align: center"><a (click)="deleteProfile(user)" class="btn btn-danger a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <span><strong>Delete</strong></span>
+                  </a></td>
                 </tr>
 
                 <tr class="success" *ngIf="(i%2!=0)">
                   <td style="text-align: center">{{user.name}}</td>
                   <td style="text-align: center">{{user.email}}</td>
                   <td style="text-align: center">{{user.username}}</td>
+                  <td style="text-align: center"><a (click)="deleteProfile(user)" class="btn btn-danger a-btn-slide-text">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <span><strong>Delete</strong></span>
+                  </a></td>
 
                 </tr>
         </tbody>
@@ -36,6 +45,10 @@
           <td style="text-align: center">{{singleUser.name}}</td>
           <td style="text-align: center">{{singleUser.email}}</td>
           <td style="text-align: center">{{singleUser.username}}</td>
+          <td style="text-align: center"><a (click)="editProfile(singleUser._id)" class="btn btn-info a-btn-slide-text">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <span><strong>Edit</strong></span>
+        </a></td>
         </tr>
         </tbody>
 

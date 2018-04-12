@@ -31,6 +31,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { EditproductComponent } from './components/editproduct/editproduct.component';
 import { StripeService} from "./common/stripe.service";
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { AddressComponent } from './components/address/address.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { StripeService} from "./common/stripe.service";
     CartComponent,
     DetailsComponent,
     CheckoutComponent,
-    EditproductComponent
+    EditproductComponent,
+    EditprofileComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

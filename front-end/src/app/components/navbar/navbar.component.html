@@ -22,11 +22,11 @@
 
     <ul class="nav navbar-nav navbar-right">
 
-      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
+      <li *ngIf="isAdmin && authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/profile']"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
 
 
-      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-plus-sign"></span>Add Product</a></li>
+      <li *ngIf="isAdmin && authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-plus-sign"></span>Add Product</a></li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/cart']"><i class="glyphicon glyphicon-shopping-cart"></i>
 
         <span class="badge">{{productService.getProductCartSize()||cart}}</span>

@@ -134,14 +134,23 @@ var updateUser = (req, res, next) => {
 
 
 var deleteUser = (req, res, next) => {
+
+    console.log('Here delete');
+
     User.findByIdAndRemove(req.params.id, (err) => {
         if(err){
+
+            console.log('In error' +err);
+
             return res.status(404).json({
                 message: err,
                 success: false
             });
         }
         else {
+
+            console.log('Here in success');
+
             return res.status(200).json({
                 message: "User deleted",
                 success: true

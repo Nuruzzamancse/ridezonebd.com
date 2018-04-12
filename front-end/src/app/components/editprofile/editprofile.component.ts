@@ -1,44 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidateService} from "../../services/validate.service";
-import { FlashMessagesService } from "angular2-flash-messages";
-import { AuthService} from "../../services/auth.service";
-import { Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
+import {ValidateService} from "../../services/validate.service";
+import {FlashMessagesService} from "angular2-flash-messages";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-editprofile',
+  templateUrl: './editprofile.component.html',
+  styleUrls: ['./editprofile.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class EditprofileComponent implements OnInit {
+
 
   name: String;
   email: String ;
   username: String;
   password: String;
-  wishList: [String];
-  buyList: [String];
 
+  user: any;
 
   constructor(
-              private validateService: ValidateService,
-              private _flashMessagesService: FlashMessagesService,
-              private authService: AuthService,
-              private router: Router
+    private authService: AuthService,
+    private validateService: ValidateService,
+    private _flashMessagesService: FlashMessagesService,
+    private router: Router,
+    private route: ActivatedRoute
+
   ) { }
 
   ngOnInit() {
 
+    const id = this.route.snapshot.paramMap.get('id');
+    this.authService.getSiingleProfile(id).subscribe(response=>{
+      this.user = response.data;
+    })
   }
 
-  onRegisterSubmit(){
-    const user = {
-      name : this.name,
-      email: this.email,
-      username: this.username,
-      password: this.password,
-      wishList: this.wishList,
-      buyList: this.buyList
-    }
+  onUpdate(user){
+
 
     //Required Fiels
     if(!this.validateService.validateRegister(user)){
@@ -57,11 +56,13 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
-    this.authService.registerUser(user)
+    const id = this.route.snapshot.paramMap.get('id');
+
+    this.authService.UpdateProfile(id,user)
       .subscribe( data =>{
         if(data.success) {
           this._flashMessagesService.show('You are now Registered.', {cssClass: 'alert-success'});
-          this.router.navigate(['/login']);
+          this.router.navigate(['/profile']);
         }
         else {
           this._flashMessagesService.show('Something went wrong', { cssClass: 'alert-danger'});

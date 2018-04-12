@@ -83,6 +83,28 @@ export class AuthService {
       .map( res => res.json());
   }
 
+
+
+  deleteProfile(id){
+    let headers = new Headers();
+
+    this.loadToken();
+
+    console.log('In delete profile');
+
+    // console.log('Token '+this.authToken);
+
+    headers.append('authorization',this.authToken);
+
+    headers.append('Content-Type','application/json');
+
+
+
+
+    return this.http.delete(`http://localhost:3000/user/${id}`,{headers:headers})
+      .map( res => res.json());
+  }
+
   loadToken(){
     const token = localStorage.getItem('id_token');
     this.authToken = token;

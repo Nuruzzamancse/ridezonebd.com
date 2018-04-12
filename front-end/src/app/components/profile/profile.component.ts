@@ -9,7 +9,7 @@ import { Router} from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
 
-  users: object;
+  users: any;
   singleUser: object;
 
 
@@ -31,6 +31,20 @@ export class ProfileComponent implements OnInit {
         this.singleUser = response.data;
         //console.log(this.singleUser);
       })
+  }
+
+  editProfile(id){
+    this.router.navigate([`/editprofile/${id}`])
+  }
+
+
+  deleteProfile(user){
+
+    this.users.splice(this.users.indexOf(user), 1);
+    this.authService.deleteProfile(user._id).subscribe(respnse=>{
+
+    });
+
   }
 
 }
