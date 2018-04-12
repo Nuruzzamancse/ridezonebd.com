@@ -4,6 +4,12 @@ import {Router} from "@angular/router";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {ProductService} from "../../services/product.service";
 
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs/Observable';
+import {startWith} from 'rxjs/operators/startWith';
+import {map} from 'rxjs/operators/map';
+import { MatFormFieldControl} from "@angular/material";
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -15,9 +21,25 @@ export class NavbarComponent implements OnInit {
 
   isAdmin: number = 0;
 
-  product:any;
+  product:any[];
 
   search: String;
+  value: string;
+
+
+
+  //Material Design
+
+  myControl: FormControl = new FormControl();
+
+  options = [
+
+  ];
+  myOption;
+
+  filteredOptions: Observable<string[]>;
+
+
 
   constructor(
     private authService: AuthService,
@@ -36,10 +58,28 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.filteredOptions = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+
     this.productService.getProduct()
       .subscribe(resposnse=>{
           this.product = resposnse.data;
+          this.product.forEach(pd => {
+            this.options.push(pd.name);
+          });
       })
+
+
+
+  }
+
+  filter(val: string): string[] {
+    return this.options.filter(option =>
+      option.toLowerCase().indexOf(val.toLowerCase()) === 0);
   }
 
   onLogoutClick(){
@@ -53,21 +93,15 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  onSearchSubmit(){
 
-    let sbmt = 1;
-      for(let i=0;i<this.product.length;i++)
-        if((this.product[i].name).toLowerCase() == this.search.toLowerCase()){
-        console.log('here');
-        this.router.navigate([`/details/${this.product[i]._id}`])
-         // console.log(this.product[i].name);
-          sbmt = 2;
-        }
+  onChangeOption(e) {
 
-        if(sbmt==1)
-    this.flashMessage.show('Product Not Found !', { cssClass: 'alert-danger' } );
-      console.log('Not found');
+    for(let product of this.product){
+      if(product.name == this.myControl.value)
+        this.router.navigate([`/details/${product._id}`])
 
+    }
+    console.log(this.myControl.value);
   }
 
 }

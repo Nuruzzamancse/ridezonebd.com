@@ -15,6 +15,7 @@ import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {EditproductComponent} from "./components/editproduct/editproduct.component";
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {EditprofileComponent} from "./components/editprofile/editprofile.component";
+import {AutocompleteFilterExampleComponent} from "./components/autocomplete-filter-example/autocomplete-filter-example.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path:'cart', component: CartComponent},
   {path:'checkout', component: CheckoutComponent, canActivate: [AuthGaurd]},
   {path:'edit/:id', component: EditproductComponent, canActivate: [AdminGaurd]},
-  {path:'editprofile/:id', component:EditprofileComponent, canActivate: [AuthGaurd]}
+  {path:'editprofile/:id', component:EditprofileComponent, canActivate: [AuthGaurd]},
+  {path:'auto', component:AutocompleteFilterExampleComponent}
 
 
 ];

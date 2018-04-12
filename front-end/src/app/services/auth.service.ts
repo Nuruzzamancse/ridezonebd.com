@@ -62,6 +62,8 @@ export class AuthService {
     let headers = new Headers();
     this.loadToken();
 
+    console.log('In service upadte'+ JSON.stringify(User));
+
     headers.append('Content-type','application/json');
     return this.http.patch(`http://localhost:3000/user/${loginId}` ,User,{headers:headers})
       .map( res => res.json());

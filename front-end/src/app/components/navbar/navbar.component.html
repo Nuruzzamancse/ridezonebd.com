@@ -7,26 +7,42 @@
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a  [routerLink]="['/']">Home</a></li>
       <!--<li><a href="#">Page 2</a></li>-->
 
-      <form (submit)="onSearchSubmit()"  class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" [(ngModel)]="search" name="search" class="form-control" placeholder="Search">
-        </div>
 
 
-        <button type="submit" class="btn btn-default">
-          <span class="glyphicon glyphicon-search"></span>
-        </button>
-      </form>
+
+
+      <li style="height: 35px">
+        <mat-form-field  (onSelect)="onChangeOption($event)">
+          <input style="background-color: white;height: 32px;border-radius: 3px" type="text" placeholder="Search" aria-label="Number" matInput [(ngModel)]="value" [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <button style="margin-bottom: 15px" class="btn btn-primary" (click)="onChangeOption($event)">Search</button>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
 
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
 
-      <li *ngIf="isAdmin && authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
+      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/dashboard']"><span class="glyphicon glyphicon-user"></span> Dashboard</a></li>
       <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/profile']"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
 
 
-      <li *ngIf="isAdmin && authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-plus-sign"></span>Add Product</a></li>
+      <li *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/product']"><span class="glyphicon glyphicon-plus-sign"></span>Add Product</a></li>
       <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><a [routerLink]="['/cart']"><i class="glyphicon glyphicon-shopping-cart"></i>
 
         <span class="badge">{{productService.getProductCartSize()||cart}}</span>
@@ -40,3 +56,4 @@
     </ul>
   </div>
 </nav>
+

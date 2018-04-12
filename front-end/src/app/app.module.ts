@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RouterModule, Routes} from "@angular/router";
 import {Http, HttpModule} from "@angular/http";
 import { FileUploadModule } from "ng2-file-upload";
 
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -33,6 +35,14 @@ import { EditproductComponent } from './components/editproduct/editproduct.compo
 import { StripeService} from "./common/stripe.service";
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { AddressComponent } from './components/address/address.component';
+import {MatButtonModule, MatCheckboxModule, MatInputModule} from "@angular/material"
+import { MatFormFieldModule } from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AutocompleteFilterExampleComponent } from './components/autocomplete-filter-example/autocomplete-filter-example.component';
+
 
 @NgModule({
   declarations: [
@@ -50,15 +60,24 @@ import { AddressComponent } from './components/address/address.component';
     CheckoutComponent,
     EditproductComponent,
     EditprofileComponent,
-    AddressComponent
+    AddressComponent,
+    AutocompleteFilterExampleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-
+    MatButtonModule,
+    MatCheckboxModule,
+    NoopAnimationsModule,
     FileUploadModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
     FlashMessagesModule.forRoot()
   ],
   providers: [ValidateService,

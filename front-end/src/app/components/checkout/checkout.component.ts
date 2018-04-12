@@ -49,16 +49,25 @@ export class CheckoutComponent implements OnInit {
   }
 
   shop(){
+    console.log('in shop');
+
     if(this.authServie.loggedIn()) {
-      this.router.navigate(['/checkout'])
+
+      //this.router.navigate(['/checkout'])
       let User = {
-        buyList:this.arrObj
+        buyList: this.arrObj,
+        wishList: null
       }
+
+
 
       this.authServie.UpdateProfile(localStorage.getItem('loginId'),User)
         .subscribe(response=>{
-          console.log('Here in update');
+          console.log('Here in update bal');
           console.log(response.data.name);
+          console.log('Buy List' +response.data.buyList);
+          console.log('Wish List' +response.data.wishList);
+
         });
 
     }
