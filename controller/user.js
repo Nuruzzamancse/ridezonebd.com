@@ -87,13 +87,16 @@ var getAllUser = (req, res, next) => {
 
 var updateUser = (req, res, next) => {
 
-    console.log('In Update');
+    console.log('In Update User');
 
     var name = req.body.name,
         email = req.body.email,
         userName = req.body.username,
         wishList = req.body.wishList,
-        buyList = req.body.buyList
+        buyList = req.body.buyList;
+
+    console.log('WIshList' +wishList);
+    console.log('Buy List' +buyList);
 
     User.findById(req.params.id, (err, User) => {
         if(err){
@@ -106,8 +109,11 @@ var updateUser = (req, res, next) => {
             User.name = name || User.name;
             User.email = email || User.email;
             User.username = userName || User.username;
-            User.wishList = wishList || User.wishList;
+            User.wishList = wishList ;
             User.buyList = buyList || User.buyList;
+
+            console.log("Wish" + User.wishList);
+            console.log("Buy" + User.buyList);
 
             User.save((err, User) => {
                 if(err){

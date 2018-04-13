@@ -49,11 +49,12 @@ export class DashboardComponent implements OnInit {
       for (let user of this.users) {
         let cnt = 1;
         let userWishListsId = user.wishList;
+        if(userWishListsId!=null)
         for (let productId of userWishListsId) {
           this.productService.getSingleProduct(productId).subscribe(response=>{
             let dummyObj:any = {};
 
-            if(cnt==1)
+            //if(cnt==1)
               dummyObj.name = user.name;
             dummyObj.product = response.data;
             console.log(dummyObj);
@@ -74,7 +75,7 @@ export class DashboardComponent implements OnInit {
           this.productService.getSingleProduct(productId).subscribe(response=>{
             let dummyObj:any = {};
 
-            if(cnt2==1)
+           // if(cnt2==1)
               dummyObj.name = user.name;
             dummyObj.product = response.data;
             console.log(dummyObj);

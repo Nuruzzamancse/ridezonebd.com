@@ -12,6 +12,7 @@ import { NgForm } from '@angular/forms';
 import { StripeService} from "../../common/stripe.service";
 import {AuthService} from "../../services/auth.service";
 import {Router} from "@angular/router";
+import {ProductService} from "../../services/product.service";
 
 
 @Component({
@@ -25,11 +26,14 @@ export class CheckoutComponent implements OnInit {
 
   myProductArray : any [];
 
+  productList: any[];
+
   constructor(
     private cd: ChangeDetectorRef,
     private stripeService: StripeService,
     private authServie: AuthService,
-    private router: Router
+    private router: Router,
+    private productService: ProductService
   ) { }
 
   @ViewChild('cardInfo') cardInfo: ElementRef;
@@ -42,10 +46,19 @@ export class CheckoutComponent implements OnInit {
     this.myProductArray = JSON.parse(localStorage.getItem('myProductCart'));
 
 
+    this.productService.getProduct()
+      .subscribe(respnse=>{
+        this.productList = respnse.data;
+        console.log(this.productList);
+      })
+
+    if(this.myProductArray)
     for(let i=0;i<this.myProductArray.length;i++) {
       // this.sum = this.sum + parseInt(this.myProductArray[i].myProduct.price) * parseInt(this.myProductArray[i].myProductCount);
       this.arrObj.push(this.myProductArray[i].myProduct._id);
     }
+
+
   }
 
   shop(){
@@ -59,6 +72,26 @@ export class CheckoutComponent implements OnInit {
         wishList: null
       }
 
+
+      // if(this.myProductArray)
+      //   for(let i=0;i<this.myProductArray.length;i++) {
+      //     // this.sum = this.sum + parseInt(this.myProductArray[i].myProduct.price) * parseInt(this.myProductArray[i].myProductCount);
+      //     this.arrObj.push(this.myProductArray[i].myProduct._id);
+      //
+      //     for(let j=0; j<this.productList.length;j++){
+      //       if(this.productList[j].product._id==this.myProductArray[i].myProduct._id){
+      //         this.productList[j].product.avl = this.productList[j].product.avl - this.myProductArray[i].myProductCount;
+      //           //this.productService.updateProduct(this.productList[j].product._id,this.productList[j].product);
+      //           console.log(this.productList[j].product.name + ' = ' + this.productList[j].product.name);
+      //       }
+      //     }
+      //   }
+
+      //localStorage.setItem('myProductCart',null);
+
+
+      localStorage.setItem('myProductCart',null);
+      localStorage.setItem('cnt',JSON.stringify(0));
 
 
       this.authServie.UpdateProfile(localStorage.getItem('loginId'),User)
