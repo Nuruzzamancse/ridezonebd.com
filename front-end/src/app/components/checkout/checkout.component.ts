@@ -45,6 +45,10 @@ export class CheckoutComponent implements OnInit {
   ngOnInit() {
     this.myProductArray = JSON.parse(localStorage.getItem('myProductCart'));
 
+    console.log('In checkout myProductCart');
+
+    console.log(localStorage.getItem('myProductCart'));
+
 
     this.productService.getProduct()
       .subscribe(respnse=>{
@@ -73,21 +77,31 @@ export class CheckoutComponent implements OnInit {
       }
 
 
-      // if(this.myProductArray)
-      //   for(let i=0;i<this.myProductArray.length;i++) {
-      //     // this.sum = this.sum + parseInt(this.myProductArray[i].myProduct.price) * parseInt(this.myProductArray[i].myProductCount);
-      //     this.arrObj.push(this.myProductArray[i].myProduct._id);
-      //
-      //     for(let j=0; j<this.productList.length;j++){
-      //       if(this.productList[j].product._id==this.myProductArray[i].myProduct._id){
-      //         this.productList[j].product.avl = this.productList[j].product.avl - this.myProductArray[i].myProductCount;
-      //           //this.productService.updateProduct(this.productList[j].product._id,this.productList[j].product);
-      //           console.log(this.productList[j].product.name + ' = ' + this.productList[j].product.name);
-      //       }
-      //     }
-      //   }
+      if(this.myProductArray)
+        for(let i=0;i<this.myProductArray.length;i++) {
+          // this.sum = this.sum + parseInt(this.myProductArray[i].myProduct.price) * parseInt(this.myProductArray[i].myProductCount);
+          //this.arrObj.push(this.myProductArray[i].myProduct._id);
 
-      //localStorage.setItem('myProductCart',null);
+          //console.log('Checking product :' + JSON.stringify(this.myProductArray[i].myProduct));
+
+          for(let j=0; j<this.productList.length;j++){
+            if(this.productList[j]._id==this.myProductArray[i].myProduct._id){
+              this.productList[j].avl = this.productList[j].avl - this.myProductArray[i].myProductCount;
+              //console.log(this.productList[j].avl);
+              // this.productService.updateProduct(this.productList[j]._id,this.productList[j].product);
+
+              this.productService.updateProduct(this.productList[j]._id,this.productList[j])
+                .subscribe(response=>{
+                  console.log(response)
+                })
+              // this.router.navigate(['/']);
+
+
+            }
+          }
+        }
+
+      localStorage.setItem('myProductCart',null);
 
 
       localStorage.setItem('myProductCart',null);

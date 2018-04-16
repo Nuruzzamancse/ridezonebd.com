@@ -135,6 +135,8 @@ export class ProductService {
 
     localStorage.setItem('myProductCart', JSON.stringify(this.myProductArray));
 
+    // console.log(JSON.parse(localStorage.getItem('myProductCart')));
+
     let myPreviousCount = parseInt(cnt2);
     // console.log('After parsing: ' + myPreviousCount);
 
@@ -167,6 +169,9 @@ export class ProductService {
   updateProduct(id,product){
 
     let headers = new Headers();
+
+    console.log("In update product ");
+    //console.log(JSON.stringify(product));
 
     headers.append('Content-type','application/json');
 

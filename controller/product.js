@@ -229,6 +229,8 @@ var updateProduct2 = (req, res, next) => {
                     product.code = code || product.code;
                     product.avl = avl || product.avl;
 
+                    console.log('Product avl '+product.avl);
+
                     product.save((err, product) => {
                         if(err){
                             return res.status(404).json({
