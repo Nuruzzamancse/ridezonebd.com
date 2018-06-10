@@ -3,6 +3,25 @@
 ## This is an E-commerce site. Made in Node.js, Express, Angular and MongoDB.
 ### Here Stripe has been used for payment.
 
+## Installation
+
+To start your application with MEAN, you need to clone the base MEAN repository from Github. This repository contains all the packages, modules and also a sample code base in order to start and make it easy to develop your application. Following the steps below will guide you to install the latest MEAN version.
+
+```
+git clone https://github.com/Nuruzzamancse/ridezonebd.com.git  
+cd ridezonebd.com
+npm install
+node index.js
+```
+Open Another Terminal in root directory
+```
+cd front-end
+npm install
+ng serve
+```
+
+NOW BROWSER VIEW AVAILABLE
+
 1. System have product table containing product code, product name, description, no. of available product in 
   stock, price and photo.
 
